@@ -2,6 +2,7 @@ package com.common.lib_base.ui.view
 
 import android.content.Context
 import android.support.annotation.ColorRes
+import android.support.annotation.DrawableRes
 import android.util.AttributeSet
 import android.view.View
 import android.widget.ImageView
@@ -40,6 +41,10 @@ class TitleBarView : ConstraintLayout {
     }
     private val titleViewBar: View by lazy {
         findViewById(R.id.titleViewBar)
+    }
+
+    fun setTitleBackIcon(@DrawableRes imgId:Int){
+        titleBtnBack.setImageResource(imgId)
     }
 
     fun setOnBackFinish(listener: SingleClickListener?) {

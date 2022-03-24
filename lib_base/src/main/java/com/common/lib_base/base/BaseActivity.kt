@@ -22,10 +22,10 @@ abstract class BaseActivity : AppCompatActivity(), BaseImpl {
             .transparentStatusBar() //透明状态栏，不写默认透明色
             .init()
         if (isShowTitleBar) {
-            mTitleBarView = TitleBarView(BaseApplication.application)
-            mTitleBarView.setTitleViewBarBg(setTitleViewBarBg())
-            mTitleBarView.setTitleBarBg(setTitleBarBg())
-            mTitleBarView.setOnTitle(titleString)
+            mTitleBarView = BaseApplication.application?.let { TitleBarView(it) }
+            mTitleBarView?.setTitleViewBarBg(setTitleViewBarBg())
+            mTitleBarView?.setTitleBarBg(setTitleBarBg())
+            mTitleBarView?.setOnTitle(titleString)
             rootView.addView(mTitleBarView, 0)
         }
         initLayoutView()
@@ -55,7 +55,7 @@ abstract class BaseActivity : AppCompatActivity(), BaseImpl {
      *
      * @return true：添加标题栏，否则不添加
      */
-    val isShowTitleBar: Boolean
+    override val isShowTitleBar: Boolean
         get() = true
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -66,19 +66,21 @@ abstract class BaseActivity : AppCompatActivity(), BaseImpl {
         isFirst = false
     }
 
-    fun bindListener() {
-        mTitleBarView.setOnBackFinish(SingleClickListener(object : OnClickListener() {
-            fun onClick(view: View?) {
-                finish()
-            }
-        }))
+    override fun bindListener() {
+        mTitleBarView?.setOnBackFinish(SingleClickListener {
+            finish()
+        })
     }
 
-    fun setTitleViewBarBg(): Int {
+    override fun setTitleViewBarBg(): Int {
         return R.color.color_128EE8
     }
 
-    fun setTitleBarBg(): Int {
+    override fun setTitleBarBg(): Int {
         return R.color.color_128EE8
+    }
+
+    override fun setTitleBackIcon(): Int {
+        return R.mipmap.arrow_white
     }
 }
