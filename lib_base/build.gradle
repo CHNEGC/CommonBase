@@ -69,7 +69,6 @@ dependencies {
     implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
     implementation "androidx.constraintlayout:constraintlayout:2.0.4"
     implementation 'com.github.CHNEGC:CommonLibDimen:v0.0.1'
-    implementation 'com.novoda:bintray-release:0.2.7'
 }
 
 repositories {

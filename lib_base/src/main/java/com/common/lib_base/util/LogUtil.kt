@@ -1,7 +1,7 @@
 package com.common.lib_base.util
 
 import android.util.Log
-import com.gyf.immersionbar.BuildConfig
+import com.common.lib_dimens.BuildConfig
 
 /**
  * Log工具类
@@ -13,6 +13,7 @@ object LogUtil {
      * 是否需要开启Log
      */
     private const val NEED_LOG = BuildConfig.DEBUG
+
     fun i(content: String) {
         if (NEED_LOG) {
             Log.i(TAG, logPrefix + content)
