@@ -10,6 +10,7 @@ android {
     defaultConfig {
         applicationId "com.common.commontitlebar"
         minSdkVersion 17
+        //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"

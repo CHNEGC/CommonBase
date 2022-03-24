@@ -25,6 +25,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -65,11 +66,13 @@ dependencies {
     //noinspection GradleDependency
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    api 'com.gyf.immersionbar:immersionbar:3.0.0'
-    api "androidx.constraintlayout:constraintlayout:2.0.4"
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+    implementation "androidx.constraintlayout:constraintlayout:2.0.4"
     implementation 'com.github.CHNEGC:CommonLibDimen:v0.0.1'
+    implementation 'com.novoda:bintray-release:0.2.7'
 }
 
 repositories {
     mavenCentral()
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/'}
 }
