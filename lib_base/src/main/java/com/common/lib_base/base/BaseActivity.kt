@@ -1,11 +1,11 @@
 package com.common.lib_base.base
 
-import android.R
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import com.common.lib_base.R
 import com.common.lib_base.imp.BaseImpl
 import com.common.lib_base.listener.SingleClickListener
 import com.common.lib_base.ui.view.TitleBarView
